@@ -1,0 +1,73 @@
+body {
+    height: 100%;
+}
+* {
+    box-sizing: border-box;
+}
+
+img {
+    width: 10vw;
+}
+
+
+
+/* Cette fonction pourrait être utilisée pour afficher les choix du joueur et de l'ordinateur à l'écran.
+// Par exemple, vous pouvez mettre à jour les éléments HTML correspondants pour afficher les images ou les symboles des choix.
+// Cependant, dans le code fourni, cette fonction est vide, donc il n'y a pas de code spécifique pour l'affichage des choix. */
+    /* displayChoices(playerChoice, computerChoice);
+    const result = compareChoices(playerChoice, computerChoice);
+    updateScore(result);
+    displayResult(result);
+}
+
+
+function displayChoices(playerChoice, computerChoice) {
+    // Display player's choice (if needed)
+    // Display computer's choice (if needed)
+}
+
+
+// Cette fonction compare les choix du joueur et de l'ordinateur pour déterminer le résultat du jeu.
+// Elle retourne une chaîne de caractères indiquant le résultat du jeu : "It's a tie!" (égalité),
+// "You win!" (le joueur gagne) ou "Computer wins!" (l'ordinateur gagne).
+function compareChoices(playerChoice, computerChoice) {
+    if (playerChoice === computerChoice) {
+        return "It's a tie!";
+    } else if (
+        (playerChoice === 'rock' && computerChoice === 'scissors') ||
+        (playerChoice === 'paper' && computerChoice === 'rock') ||
+        (playerChoice === 'scissors' && computerChoice === 'paper')
+    ) {
+        return "You win!";
+    } else {
+        return "Computer wins!";
+    }
+}
+
+
+// Cette fonction met à jour les scores du joueur et de l'ordinateur en fonction du résultat du jeu.
+// Elle vérifie la valeur de la variable "result" pour déterminer qui a gagné et incrémente le score approprié.
+// Ensuite, elle met à jour les éléments HTML correspondants pour afficher les scores actualisés.
+function updateScore(result) {
+    if (result === "You win!") {
+        playerScore++;
+    } else if (result === "Computer wins!") {
+        computerScore++;
+    }
+    playerScoreElem.textContent = `Joueur : ${playerScore}`;
+    computerScoreElem.textContent = `Ordinateur : ${computerScore}`;
+}
+
+
+// Cette fonction affiche le résultat du jeu à l'écran.
+// Elle met à jour l'élément HTML correspondant pour afficher la valeur de la variable "result".
+function displayResult(result) {
+    resultElem.textContent = result;
+}
+
+
+/* La dernière partie du script ajoute des écouteurs d'événements à chaque bouton de choix.
+// Lorsque l'un des boutons est cliqué, la fonction "playGame()" est appelée.
+// Cela permet d'initier le jeu lorsque le joueur effectue un choix. */
+/* // Add event listeners to choices buttons
+choices.forEach(choice => choice.addEventListener('click', playGame)); */

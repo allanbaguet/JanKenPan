@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>ShiFuMi !</title>
+</head>
+
+<body>
+    <div class="container-fluid ">
+        <div class="row">
+            <div class="col">
+                <h1 class="text-center p-5">Jan <span class="text-primary">Ken</span> Pon !</h1>
+                <div class="row">
+                    <div class="col-2"></div>
+                    <div class="card text-white bg-primary col-8">
+                        <div class="card-body">
+                            <h3 class="card-title text-center fs-2">Régle</h3>
+                            <p class="card-text fs-5">Dans ce jeu de pierre-feuille-ciseaux,
+                                chaque choix (pierre, feuille, ciseaux) sera associé à
+                                un symbole japonais emblématique. Les joueurs pourront
+                                utiliser icônes représentant ces
+                                symboles pour une expérience immersive. Chaque symbole aura
+                                ses propres significations et correspondances, ajoutant une
+                                dimension culturelle et stratégique au jeu.<br>
+                                <strong>La pierre bat le ciseaux, le ciseaux bat la feuille, la feuille bat la pierre.</strong>
+                                <br><br>
+                                <strong>Les symboles japonais :</strong>
+                                <br><br>
+                                <strong>Pierre (Ishi) :</strong>Représenté par une icône de montagne,
+                                symbolisant la force, la stabilité et la solidité.
+                                <br>
+                                <strong>Feuille (Kami) :</strong> Représentée par une icône de sakura (cerisier en fleurs),
+                                symbolisant la beauté éphémère et la nature.
+                                <br>
+                                <strong>Ciseaux (Hasami) :</strong> Représentés par une icône de katana (sabre japonais),
+                                symbolisant l'agilité et la précision.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="fs-2 text-center p-3">Choisi ton symbole :</h3>
+                <div class="row">
+                    <div class="col">
+                        <div id="choices" class="d-flex justify-content-evenly p-4">
+                            <button class="choice" id="rock"><img class="img-fluid" src="/assets/img/mont-fuji.png" name="Mont fuji"></button>
+                            <button class="choice" id="paper"><img class="img-fluid" src="/assets/img/fleur-de-cerisier.png" name="Fleur de cerisier"></button>
+                            <button class="choice" id="scissor"><img class="img-fluid" src="/assets/img/katana.png" name="Katana"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div id="score" class="d-flex justify-content-evenly">
+                            <div id="player-score" class="fs-2">Joueur : 0</div>   
+                            <div id="computer-score" class="fs-2">Ordinateur : 0</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col d-flex justify-content-center p-4">
+                        <button type="button" class="btn btn-primary btn-lg">Jan Ken Pon !</button>
+                    </div>
+                </div>
+                <div id="computer-choice" class="text-center fs-3"></div>
+                <div id="result" class="text-center fs-2"></div>
+                <div class="row">
+                    <div class="col d-flex justify-content-center p-4">
+                        <button id="play-again" type="button" class="btn btn-dark">Recommencer la partie</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>         
+
+    <script deter src="./assets/js/script.js"></script>
+</body>
+
+</html>
