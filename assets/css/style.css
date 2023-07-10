@@ -1,9 +1,6 @@
 body {
     background-image: url(/assets/img/8ca102a811768049d3c329f9d471130a.gif);
 }
-* {
-    box-sizing: border-box;
-}
 img {
     width: 10vw;
 }

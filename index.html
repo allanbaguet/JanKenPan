@@ -23,9 +23,9 @@
                     <div class="accordion col-8" id="accordionExample">
                         <div class="accordion-item bg-primary text-center">
                             <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button collapsed bg-primary text-white fs-2 fw-bold" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false"
-                                    aria-controls="collapseOne">
+                                <button class="accordion-button collapsed bg-primary text-white fs-2 fw-bold"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                    aria-expanded="false" aria-controls="collapseOne">
                                     Régle
                                 </button>
                             </h2>
@@ -38,14 +38,16 @@
                                         expérience immersive. Chaque symbole aura ses propres significations et
                                         correspondances, ajoutant une dimension culturelle au jeu.<br>
                                         <strong>La pierre bat le ciseaux, le ciseaux bat la feuille, la feuille bat la
-                                        pierre.</strong>
+                                            pierre.</strong>
                                         <br><br>
                                         <strong>Les symboles japonais :</strong>
                                         <br><br>
-                                        <strong>Pierre (Ishi) :</strong> Représenté par une icône de montagne, symbolisant
+                                        <strong>Pierre (Ishi) :</strong> Représenté par une icône de montagne,
+                                        symbolisant
                                         la force, la stabilité et la solidité.
                                         <br>
-                                        <strong>Feuille (Kami) :</strong> Représentée par une icône de sakura (cerisier en
+                                        <strong>Feuille (Kami) :</strong> Représentée par une icône de sakura (cerisier
+                                        en
                                         fleurs), symbolisant la beauté éphémère et la nature.
                                         <br>
                                         <strong>Ciseaux (Hasami) :</strong> Représentés par une icône de katana (sabre
@@ -56,49 +58,58 @@
                         </div>
                     </div>
                 </div>
-                    <h3 class="fs-2 text-center p-3">Choisi ton symbole :</h3>
-                    <div class="row">
-                        <div class="col">
-                            <div id="choices" class="d-flex justify-content-evenly p-4">
-                                <button class="choice" id="Pierre">
-                                    <img class="img-fluid" src="./assets/img/mont-fuji.webp" name="Mont fuji" alt="fuji-san">
-                                </button>
-                                <button class="choice" id="Feuille">
-                                    <img class="img-fluid" src="./assets/img/fleur-de-cerisier.webp" name="Fleur de cerisier" alt="sakura-flower">
-                                </button>
-                                <button class="choice" id="Ciseaux">
-                                    <img class="img-fluid" src="./assets/img/katana.webp" name="Katana" alt="katana-slice-leaves">
-                                </button>
-                            </div>
+                <h3 class="fs-2 text-center p-3">Choisi ton symbole</h3>
+                <div class="row">
+                    <div class="col">
+                        <div id="choices" class="d-flex justify-content-evenly p-4">
+                            <button class="choice" id="Pierre">
+                                <img class="img-fluid" src="./assets/img/mont-fuji.webp" name="Mont fuji"
+                                    alt="fuji-san">
+                            </button>
+                            <button class="choice" id="Feuille">
+                                <img class="img-fluid" src="./assets/img/fleur-de-cerisier.webp"
+                                    name="Fleur de cerisier" alt="sakura-flower">
+                            </button>
+                            <button class="choice" id="Ciseaux">
+                                <img class="img-fluid" src="./assets/img/katana.webp" name="Katana"
+                                    alt="katana-slice-leaves">
+                            </button>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col">
-                            <div id="score" class="d-flex justify-content-evenly">
-                                <div id="player-score" class="fs-2">Joueur : 0</div>
-                                <div id="computer-score" class="fs-2">Ordinateur : 0</div>
-                            </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div id="score" class="d-flex justify-content-evenly">
+                            <div id="player-score" class="fs-2">Joueur : 0</div>
+                            <div id="computer-score" class="fs-2">Ordinateur : 0</div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col d-flex justify-content-center p-3">
-                            <button type="button" id="sound" class="btn btn-primary btn-lg">Jan Ken Pon !</button>
-                        </div>
+                </div>
+                <div class="row">
+                    <div class="col d-flex justify-content-center p-3">
+                        <button type="button" id="sound" class="btn btn-primary btn-lg">Jan Ken Pon !</button>
                     </div>
-                    <div id="computer-choice" class="text-center fs-3"></div>
-                    <div id="result" class="text-center fs-2"></div>
-                    <div class="row">
-                        <div class="col d-flex justify-content-center p-2">
-                            <button id="play-again" type="button" class="btn btn-dark">Recommencer la partie</button>
-                        </div>
+                </div>
+                <div id="computer-choice" class="text-center fs-3"></div>
+                <div class="row">
+                    <div class="col d-flex justify-content-evenly">
+                        <div id="result" class="text-center fs-2"></div>
+                        <div id="stats" class="text-center fs-5 bg-primary rounded fw-bold text-white p-2">0%</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col d-flex justify-content-center p-2">
+                        <button id="play-again" type="button" class="btn btn-dark">Recommencer la partie</button>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <script defer src="./assets/js/script.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
-            integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
-            crossorigin="anonymous"></script>
+    <script defer src="./assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+        integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
