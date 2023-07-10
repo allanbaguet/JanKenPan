@@ -13,7 +13,7 @@ const audio = new Audio('./assets/sound/japaneses-yooooo.mp3')
 // score de départ des 2 côtés
 let playerScore = 0;
 let computerScore = 0;
-// variables qui va permettre de calculé le % de win dans la fonction plus bas
+// variables qui va permettre de calculé le % de win dans la fonction updateStats
 let playerWins = 0;
 let computerWins = 0;
 
@@ -30,12 +30,12 @@ function playGame() {
     updateStats();
 }
 
-// permet d'afficher le message du choix du bot
+// permet d'afficher le message du choix de symbole du bot
 function displayChoices(playerChoice, computerChoice) {
     computerChoiceElem.innerHTML = `L'ordinateur a choisit: ${computerChoice}`;
 }
 
-// fonction qui compare les choix, et ainsi désigne un vainqueur ou un perdant
+// fonction qui compare les choix et ainsi désigne un vainqueur et un perdant
 function compareChoices(playerChoice, computerChoice) {
     if (playerChoice === computerChoice) {
         return "C'est une égalité !";
@@ -50,7 +50,7 @@ function compareChoices(playerChoice, computerChoice) {
     }
 }
 
-// fonction qui permet d'afficher le résultats et les scores 
+// fonction qui permet d'afficher le résultat et les scores 
 function updateScore(result) {
     if (result === "Tu as gagné !") {
         playerScore++;
@@ -76,7 +76,7 @@ function updateStats() {
     statsElem.textContent = `Winrate : ${winPercentage.toFixed(2)}%`; //tofixed(2) permet d'afficher que 2 chiffres après la virgule
 }
 
-// fonction qui réinitialise les scores et les chaine de caractères
+// fonction qui réinitialise les scores et les chaines de caractères
 function resetGame() {
     playerScore = 0;
     computerScore = 0;
