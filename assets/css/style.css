@@ -1,13 +1,9 @@
 body {
-    /* height: 100%; */
-    /* background-image: url(https://i.pinimg.com/originals/8c/a1/02/8ca102a811768049d3c329f9d471130a.gif); */
     background-image: url(/assets/img/8ca102a811768049d3c329f9d471130a.gif);
-    /* background-repeat: no-repeat; */
 }
 * {
     box-sizing: border-box;
 }
-
 img {
     width: 10vw;
 }
