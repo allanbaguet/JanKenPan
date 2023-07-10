@@ -4,6 +4,9 @@ body {
 img {
     width: 10vw;
 }
+#torii {
+    width: 5vw;
+}
 #Pierre,#Feuille,#Ciseaux {
     border-radius: 10px;
 }
