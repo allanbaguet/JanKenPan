@@ -32,6 +32,7 @@ formInput.addEventListener("submit", (e) => {
     e.preventDefault();
     nameStorage.push(nameInput.value);
     localStorage.setItem("playerName", JSON.stringify(nameStorage));
+    nameInput.value = "";
     // localStorage.removeItem('playerName')
 });
 
@@ -118,3 +119,13 @@ choices.forEach(choice => choice.addEventListener('click', playGame));
 playAgainBtn.addEventListener('click', resetGame);
 // écouteur d'événement qui permet de jouer un son au clic du bouton JanKenPon
 soundBtn.addEventListener('click', playSound);
+
+
+// affiche les pétales en bas de la page (à retravailler)
+// let left = 0
+// for (i=0; i<100; i++){
+//     let rand = Math.floor(Math.random()* 360)
+//     let image = `<img class='bottom-petal' style='position : "fixed";bottom:"3px"; left:"${left}px"; transform:rotate(${rand}deg);width:calc(100%/100)' src='./assets/img/pétale_sakura.png'>`
+//     document.querySelector('body').innerHTML += image
+//     left += 10
+// }
