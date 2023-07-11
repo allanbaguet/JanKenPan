@@ -6,9 +6,6 @@ const resultElem = document.querySelector('#result');
 const computerChoiceElem = document.querySelector('#computer-choice');
 const playAgainBtn = document.querySelector('#play-again');
 const statsElem = document.querySelector('#stats');
-let formInput = document.querySelector('#form');
-let nameInput = document.querySelector('#name');
-let sendButton = document.querySelector('#sendBtn');
 
 // variables pour le bouton et le son
 const soundBtn = document.querySelector('#sound');
@@ -20,21 +17,6 @@ let computerScore = 0;
 // variables qui va permettre de calculé le % de win dans la fonction updateStats
 let playerWins = 0;
 let computerWins = 0;
-
-// local storage, JSON.parse convertit une chaine de caractère en un objet
-let nameStorage = localStorage.getItem("playerName")
-    ? JSON.parse(localStorage.getItem("playerName"))
-    : [];
-
-//écouteur d'événement sur le bouton au moment de l'envoi du formulaire,
-// (e) est un paramètre, JSON.stringify convertit un objet en chaine de caractère
-formInput.addEventListener("submit", (e) => {
-    e.preventDefault();
-    nameStorage.push(nameInput.value);
-    localStorage.setItem("playerName", JSON.stringify(nameStorage));
-    nameInput.value = "";
-    // localStorage.removeItem('playerName')
-});
 
 // fonction principale du jeu, permet au bot de choisir un symbole dans le tableau aléatoirement,
 // permet aussi au joueur de choisir son symbole grace à l'id , affiche, compare et met à jour les scores
@@ -104,7 +86,9 @@ function resetGame() {
     computerScoreElem.innerHTML = 'Ordinateur : 0';
     resultElem.innerHTML = '';
     computerChoiceElem.innerHTML = '';
-    statsElem.textContent = '0%';
+    playerWins = 0;
+    computerWins = 0;
+    statsElem.innerHTML = '0%';
 }
 
 // fonction pour le son et le fait qu'il se remet à 0 à chaque clic du bouton
