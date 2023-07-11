@@ -5,11 +5,8 @@ img {
     width: 10vw;
 }
 #torii {
-    width: 5vw;
+    width: 7vw;
 }
 #Pierre,#Feuille,#Ciseaux {
     border-radius: 10px;
-}
-#headingOne {
-    padding-left: 44%;
 }

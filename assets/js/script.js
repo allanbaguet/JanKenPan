@@ -6,6 +6,10 @@ const resultElem = document.querySelector('#result');
 const computerChoiceElem = document.querySelector('#computer-choice');
 const playAgainBtn = document.querySelector('#play-again');
 const statsElem = document.querySelector('#stats');
+let formInput = document.querySelector('#form');
+let nameInput = document.querySelector('#name');
+let sendButton = document.querySelector('#sendBtn');
+
 // variables pour le bouton et le son
 const soundBtn = document.querySelector('#sound');
 const audio = new Audio('./assets/sound/japaneses-yooooo.mp3')
@@ -17,8 +21,22 @@ let computerScore = 0;
 let playerWins = 0;
 let computerWins = 0;
 
-// fonction principale du jeu, permet au bot de choisir un symbole dans le tableau en aléatoire,
-// permet aussi au joueur de choisir son symbole, affiche, compare et met à jour les scores
+// local storage, JSON.parse convertit une chaine de caractère en un objet
+let nameStorage = localStorage.getItem("playerName")
+    ? JSON.parse(localStorage.getItem("playerName"))
+    : [];
+
+//écouteur d'événement sur le bouton au moment de l'envoi du formulaire,
+// (e) est un paramètre, JSON.stringify convertit un objet en chaine de caractère
+formInput.addEventListener("submit", (e) => {
+    e.preventDefault();
+    nameStorage.push(nameInput.value);
+    localStorage.setItem("playerName", JSON.stringify(nameStorage));
+    // localStorage.removeItem('playerName')
+});
+
+// fonction principale du jeu, permet au bot de choisir un symbole dans le tableau aléatoirement,
+// permet aussi au joueur de choisir son symbole grace à l'id , affiche, compare et met à jour les scores
 function playGame() {
     const weapons = ['Pierre', 'Feuille', 'Ciseaux'];
     const playerChoice = this.id;
@@ -40,7 +58,7 @@ function compareChoices(playerChoice, computerChoice) {
     if (playerChoice === computerChoice) {
         return "C'est une égalité !";
     } else if (
-        (playerChoice === 'Pierre' && computerChoice === 'Ciseaux') ||
+        (playerChoice === 'Pierre' && computerChoice === 'Ciseaux') || //L'opérateur OU logique renvoie vrai si et seulement si au moins un de ses opérandes est vrai
         (playerChoice === 'Feuille' && computerChoice === 'Pierre') ||
         (playerChoice === 'Ciseaux' && computerChoice === 'Feuille')
     ) {
@@ -72,6 +90,7 @@ function displayResult(result) {
 // la variable winPercentage permet de calculé un pourcentage en multipliant par 100 les victoires du joueurs / le nombre de partie
 function updateStats() {
     const totalGames = playerWins + computerWins;
+    //? est une expression ternaire/ retourne valeur 0 si aucune partie jouée -> évite les pb de divison par 0
     const winPercentage = totalGames > 0 ? (playerWins / totalGames) * 100 : 0;
     statsElem.textContent = `Winrate : ${winPercentage.toFixed(2)}%`; //tofixed(2) permet d'afficher que 2 chiffres après la virgule
 }
